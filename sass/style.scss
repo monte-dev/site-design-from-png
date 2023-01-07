@@ -9,6 +9,7 @@ $primary: rgb(254, 209, 54);
 $white: rgb(255, 255, 255);
 $black: rgb(0, 0, 0);
 $grey: rgb(100, 100, 100);
+$bg-color: rgb(247, 247, 248);
 // general
 * {
   box-sizing: border-box;
@@ -31,6 +32,7 @@ header {
   max-width: 800px;
 }
 body {
+  background-color: $bg-color;
   font-family: $font-main;
 }
 header {
@@ -109,9 +111,9 @@ nav {
 }
 
 // Services section
-.services,
-.portfolio {
+.services {
   display: flex;
+  background-color: $white;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -119,7 +121,7 @@ nav {
   padding: 40px 10px;
 }
 .services .row:first-of-type,
-.portfolio .row:first-of-type {
+.portfolio {
   padding-top: 30px;
   padding-bottom: 60px;
 }
@@ -165,10 +167,53 @@ nav {
   max-width: 350px;
 }
 
-
+// portfolio section
+.portfolio {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px 10px;
+}
+.portfolio-content {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: 1fr;
+}
+.portfolio-card {
+    max-width: 300px;
+  margin: 50px 10px 10px 10px;
+  background-color: $white;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+}
+.portfolio-card img {
+  max-width: 100%;
+  height: 75%;
+  object-fit: cover;
+}
+.portfolio-card h3 {
+    font-size: 14px;
+}
+.portfolio-card p {
+  font-family: $font-description;
+  color: $grey;
+  padding-top: 4px;
+  font-size: 12px;
+  font-style: italic;
+}
+.portfolio-card div {
+    height: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 // Footer
 footer {
   padding: 40px 0;
+  background-color: $white;
 }
 footer > div {
   display: flex;
@@ -183,27 +228,33 @@ footer a {
   text-decoration: none;
   color: $black;
 }
+footer a:hover {
+    color: $primary;
+}
 .social-icons {
-    list-style-type: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 30px 0;
-  }
-  .social-icons li {
-    margin: 0 10px;
-  }
-  
-  .social-icons i {
-    font-size: 1rem;
-    border-radius: 50%;
-    color: $white;
-    background-color: $black;
-    line-height: 2em;
-    width: 2em;
-    height: 2em;
-    text-align: center;
-  }
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 0;
+}
+.social-icons li {
+  margin: 0 10px;
+}
+.social-icons li i:hover {
+    color: $primary;
+}
+
+.social-icons i {
+  font-size: 1rem;
+  border-radius: 50%;
+  color: $white;
+  background-color: $black;
+  line-height: 2em;
+  width: 2em;
+  height: 2em;
+  text-align: center;
+}
 
 //  MEDIA QUERIES
 @media (min-width: 768px) {
@@ -235,6 +286,9 @@ footer a {
   }
   .services .row:first-of-type {
     padding-bottom: 40px;
+  }
+  .portfolio-content {
+    grid-template-columns: 1fr 1fr 1fr;
   }
   footer > div {
     flex-direction: row;
