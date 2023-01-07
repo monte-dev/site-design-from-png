@@ -38,9 +38,6 @@ header {
   flex-direction: column;
   align-items: center;
 }
-img {
-  width: 200px;
-}
 // nav
 nav {
   padding: 30px;
@@ -123,7 +120,7 @@ nav {
 }
 .services .row:first-of-type,
 .portfolio .row:first-of-type {
-    padding-top: 30px;
+  padding-top: 30px;
   padding-bottom: 60px;
 }
 .section-heading {
@@ -168,6 +165,47 @@ nav {
   max-width: 350px;
 }
 
+
+// Footer
+footer {
+  padding: 40px 0;
+}
+footer > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+footer p {
+  font-size: 12px;
+}
+footer a {
+  text-decoration: none;
+  color: $black;
+}
+.social-icons {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0;
+  }
+  .social-icons li {
+    margin: 0 10px;
+  }
+  
+  .social-icons i {
+    font-size: 1rem;
+    border-radius: 50%;
+    color: $white;
+    background-color: $black;
+    line-height: 2em;
+    width: 2em;
+    height: 2em;
+    text-align: center;
+  }
+
+//  MEDIA QUERIES
 @media (min-width: 768px) {
   nav #mobile-menu {
     display: none;
@@ -197,5 +235,8 @@ nav {
   }
   .services .row:first-of-type {
     padding-bottom: 40px;
+  }
+  footer > div {
+    flex-direction: row;
   }
 }
