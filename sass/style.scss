@@ -2,12 +2,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Catamaran:wght@400;700&family=Euphoria+Script&family=Montserrat:wght@300;400;500;700&display=swap");
 
 $font-main: "Montserrat", serif;
-$font-description: 'Georgia', "Times New Roman", serif;
+$font-description: "Georgia", "Times New Roman", serif;
 $font-headings: "Catamaran", sans-serif;
 $font-logo: "Euphoria Script", serif;
 $primary: rgb(254, 209, 54);
 $white: rgb(255, 255, 255);
 $black: rgb(0, 0, 0);
+$grey: rgb(100, 100, 100);
 // general
 * {
   box-sizing: border-box;
@@ -65,8 +66,8 @@ nav {
   cursor: pointer;
 }
 .nav li:hover {
-    border-bottom: 1px solid $primary;
-    transform: scale(1.1);
+  border-bottom: 1px solid $primary;
+  transform: scale(1.1);
 }
 // hero section
 
@@ -106,10 +107,66 @@ nav {
 .btn:hover {
   background-color: rgba($primary, 0.85);
   color: $white;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15), inset 0 0 0 2px rgba($white, 0.85);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15),
+    inset 0 0 0 2px rgba($white, 0.85);
 }
 
-
+// Services section
+.services,
+.portfolio {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px 10px;
+}
+.services .row:first-of-type,
+.portfolio .row:first-of-type {
+    padding-top: 30px;
+  padding-bottom: 60px;
+}
+.section-heading {
+  font-size: 32px;
+}
+.section-description {
+  color: $grey;
+  font-family: $font-description;
+  font-size: 14px;
+  font-weight: 300;
+  font-style: italic;
+}
+.service {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+}
+.icon-wrapper {
+  border-radius: 50%;
+  height: 54px;
+  width: 54px;
+  padding: 6px;
+  border: 3px solid $primary;
+}
+.services img {
+  width: 36px;
+  height: 36px;
+}
+.services h3 {
+  margin-top: 15px;
+  font-size: 14px;
+}
+.services p {
+  font-size: 14px;
+  color: $grey;
+  font-family: $font-description;
+  padding: 0 40px;
+  margin-top: 10px;
+  text-align: center;
+  max-width: 350px;
+}
 
 @media (min-width: 768px) {
   nav #mobile-menu {
@@ -131,5 +188,14 @@ nav {
   }
   .hero h2 {
     font-size: 4rem;
+  }
+  .services {
+    height: 46vh;
+  }
+  .services p {
+    padding: 0 0;
+  }
+  .services .row:first-of-type {
+    padding-bottom: 40px;
   }
 }
