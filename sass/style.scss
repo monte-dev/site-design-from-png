@@ -40,6 +40,9 @@ header {
   flex-direction: column;
   align-items: center;
 }
+.visually-hidden {
+  display: none;
+}
 // nav
 nav {
   padding: 30px;
